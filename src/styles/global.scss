@@ -1,3 +1,18 @@
+@import url('https://fonts.googleapis.com/css2?family=Bebas+Neue&family=Montserrat:wght@400;500;700&display=swap');
 @import-normalize; 
 @import "./variaveis";
+
+body {
+    margin: 0;
+    padding: 0;
+    min-height: 100vh;
+    background-color: $fundo-claro;
+    box-sizing: border-box;
+}
+
+@font-face {
+    font-family: "BladeRunner";
+    src: url("../assets/fontes/BLADRMF_.TTF");
+}
+
 

@@ -1,6 +1,10 @@
+import BarraNav from "components/BarraNav";
 
 export default function MainPage() {
     return(
-        <h1>OI</h1>
+        <main>
+            <BarraNav />
+
+        </main>
     )
 }
