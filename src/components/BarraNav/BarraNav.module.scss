@@ -1,5 +1,29 @@
 @import "../../styles/variaveis";
 
+$barra_height: 25vh;
+
 .barra{
     background-color: $fundo-preto;
+    height: $barra_height;
+    width: 100%;
+    position: fixed;
+    top: 0;
+    z-index: 1000;
+    margin: 0;
+
+    &__lista {
+        list-style: none;
+        display: flex;
+        align-items: center;
+        padding: 0;
+        margin: 25px 20px;
+        
+        font-family: $fonte-titulo;
+
+        li{
+            margin: 0 15px;
+        }
+        
+    }
+
 }
