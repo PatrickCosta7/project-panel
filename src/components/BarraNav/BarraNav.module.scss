@@ -1,6 +1,6 @@
 @import "../../styles/variaveis";
 
-$barra_height: 25vh;
+$barra_height: 21vh;
 
 .barra{
     background-color: $fundo-preto;
@@ -17,11 +17,13 @@ $barra_height: 25vh;
         align-items: center;
         padding: 0;
         margin: 25px 20px;
-        
         font-family: $fonte-titulo;
 
         li{
             margin: 0 15px;
+
+            
+
         }
         
     }

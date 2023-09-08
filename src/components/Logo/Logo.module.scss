@@ -1,12 +1,22 @@
 @import "../../styles/variaveis";
+@import "../../styles/breakpoints";
 
 .logo {
     text-align: center;
-    color: $verde-claro;
     background-color: $fundo-preto;
-    font-size: 4em;
-    font-family: $fonte-logo;
-    padding: 10px;
     margin: 0;
-}
 
+    h1 {
+        color: $verde-claro;
+        font-family: $fonte-logo;
+
+        @include md {
+            font-size: 35px;
+        }
+
+        @include lg {
+            font-size: 60px;
+        }
+    }
+
+}

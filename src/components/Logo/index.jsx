@@ -2,8 +2,8 @@ import styles from "./Logo.module.scss"
 
 export default function Logo() {
     return (
-            <h1 className={styles.logo}>
-                Project B Panel
-            </h1>
+        <div className={styles.logo}>
+            <h1>Project B Panel</h1>
+        </div>
     )
 }
