@@ -1,9 +1,17 @@
 @import "../../styles/variaveis";
+@import "../../styles/breakpoints";
 
 .link{
     text-decoration: none;
-    font-size: 2em;   
     color: $verde-claro;
+
+    @include md {
+        font-size: 30px;
+    }
+
+    @include lg {
+        font-size: 45px;
+    }
 
     &:hover {
         color: $verde-escuro;

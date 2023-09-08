@@ -10,6 +10,11 @@ function BarraNav() {
             <ul className={styles.barra__lista}>
                 <li>
                     <BarraLink url="/">
+                        Todos
+                    </BarraLink>
+                </li>
+                <li>
+                    <BarraLink url="/">
                         Assistidos
                     </BarraLink>
                 </li>
