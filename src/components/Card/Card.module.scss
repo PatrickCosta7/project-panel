@@ -1,0 +1,60 @@
+@import "../../styles/variaveis";
+@import "../../styles/breakpoints";
+
+.card {
+    background-color: $fundo-preto;
+    width: 250px;
+    margin: 20px;
+    padding: 5px;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+
+    &__titulo {
+        margin: 5px 0px 20px 0px;
+        font-family: $fonte-titulo;
+        font-size: 30px;
+        color: $verde-claro;
+    }
+
+    &__imagem {
+        max-width: 200px;
+        max-height: auto;
+    }
+
+    &__lista {
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding: 0;
+
+        li {
+            margin-bottom: 10px;
+            font-family: $fonte-texto;
+            font-weight: 500;
+            color: white;
+        }
+
+        button {
+            padding: 10px;
+            margin: 0px 5px 0px 5px;
+            background-color: $verde-escuro;
+            border: none;
+            border-radius: 5px;
+            font-family: $fonte-texto;
+            font-weight: 500;
+            color: $verde-muito-claro;
+            
+            &:hover {
+                background-color: $verde-muito-claro;
+                color: $verde-escuro;
+            }
+
+        }
+
+        
+    }
+
+}
