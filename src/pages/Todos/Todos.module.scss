@@ -1,6 +1,9 @@
+@use "sass:math";
+
 @import "../../styles/variaveis";
 @import "../../styles/breakpoints";
-@use "sass:math";
+
+
 $grid-columns: 12;
 
 // Base layout
@@ -17,4 +20,11 @@ $grid-columns: 12;
     flex-flow: row wrap;
 }
 
+@include xs {
+    @for $i from 1 through $grid-columns {
+        // .col-#{$1}-xs {
+
+        // }
+    }
+}
 
