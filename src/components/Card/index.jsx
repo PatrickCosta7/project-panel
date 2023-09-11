@@ -1,18 +1,17 @@
 import styles from "./Card.module.scss"
-import plus from "./plus.jpg"
 
-export default function Card() {
+export default function Card(props) {
     return (
 
         <div className={styles.card}>
-            <h5 className={styles.card__titulo}>Titulo do card</h5>
-            <img className={styles.card__imagem} src={plus} alt="Imagem do Card" />
+            <h5 className={styles.card__titulo}>{props.titulo}</h5>
+            <img className={styles.card__imagem} src={props.imagem} alt="Imagem do Card" />
             <ul className={styles.card__lista}>
                 <li>
-                    <p>Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta eveniet, autem magnam adipisci, facilis quaerat nisi harum cumque quibusdam deserunt dolorem eligendi accusamus!</p>
+                    <p>{props.descricao}</p>
                 </li>
-                <li>Assistido</li>
-                <li>Não curtido</li>
+                <li>{props.visto}</li>
+                <li>{props.curtido}</li>
                 <li>
                     <button>Modificar</button>
                     <button>Apagar</button>
