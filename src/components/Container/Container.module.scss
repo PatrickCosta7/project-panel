@@ -1,4 +1,7 @@
-.container  section{
-    margin: 20px 20em;
-    padding: 0;
+.container section {
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+    padding: 0 20px;
+    box-sizing: border-box;
 }

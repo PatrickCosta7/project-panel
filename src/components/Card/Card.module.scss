@@ -1,10 +1,54 @@
+@use "sass:math";
 @import "../../styles/variaveis";
 @import "../../styles/breakpoints";
+
+
+$grid-columns: 12;
+
+@include xs {
+    @for $i from 1 through $grid-columns {
+        .col_xs_#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100, $grid-columns);
+        }
+    }
+}
+
+@include sm {
+    @for $i from 1 through $grid-columns {
+        .col_sm_#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100, $grid-columns);
+        }
+    }
+}
+
+@include md {
+    @for $i from 1 through $grid-columns {
+        .col_md_#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100, $grid-columns);
+        }
+    }
+}
+
+@include lg {
+    @for $i from 1 through $grid-columns {
+        .col_lg_#{$i} {
+            box-sizing: border-box;
+            flex-grow: 0;
+            width: math.div($i * 100, $grid-columns);
+        }
+    }
+}
 
 .card {
     background-color: $fundo-preto;
     width: 250px;
-    margin: 20px;
+    margin: 15px;
     padding: 5px;
     border-radius: 10px;
     display: flex;
