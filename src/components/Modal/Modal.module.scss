@@ -1,0 +1,41 @@
+@import "../../styles/variaveis";
+@import "../../styles/breakpoints";
+
+.overlay{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal{
+    width: 400px;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    background-color: $fundo-preto;
+    border-radius: 20px;
+    align-items: center;
+    color: $verde-claro;
+
+    &__corpo{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right:30px ;
+
+        input{
+            border-radius: 30px;
+        }
+
+    }
+
+}

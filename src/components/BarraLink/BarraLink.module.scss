@@ -5,17 +5,15 @@
     text-decoration: none;
     color: $verde-claro;
 
-    @include md {
-        font-size: 30px;
-    }
-
-    @include lg {
-        font-size: 35px;
-    }
-
     &:hover {
         color: $verde-escuro;
     }
 
+    @include md {
+        font-size: 27px;
+    }
 
+    @include lg {
+        font-size: 35px;
+    }   
 }

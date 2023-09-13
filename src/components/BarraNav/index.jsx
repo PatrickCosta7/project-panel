@@ -1,8 +1,20 @@
 import BarraLink from "components/BarraLink";
 import Logo from "components/Logo";
+import Modal from "components/Modal";
+import { useState } from "react";
 import styles from "./BarraNav.module.scss"
 
 function BarraNav() {
+    const [modalOn, setModalOn] = useState(false);
+
+    const abrirModal = () => {
+        setModalOn(true);
+    }
+
+    const fecharModal = () => {
+        setModalOn(false);
+    }
+
     return (
 
         <header className={styles.barra}>
@@ -32,6 +44,13 @@ function BarraNav() {
                     <BarraLink url="">
                         Não Gostei
                     </BarraLink>
+                </li>
+                <li>
+                    <h5 className={styles.botao} onClick={abrirModal}>
+                        <Modal estaAberto={modalOn} closeModal={fecharModal}>
+                            Adicionar Filme
+                        </Modal>
+                    </h5>
                 </li>
                 
             </ul>
