@@ -19,11 +19,19 @@ export default function Modal() {
                     </li>
 
                     <li>
-                        <input placeholder="assistido?" />
+                        <label htmlFor="visto">Assistiu?</label>
+                        <select name="visto" id="visto">
+                            <option value="Assistido">Sim</option>
+                            <option value="Não assistido">Não</option>
+                        </select>
                     </li>
 
                     <li>
-                        <input placeholder="não assistido?" />
+                        <label htmlFor="curtido">Gostou?</label>
+                        <select name="curtido" id="curtido" disabled>
+                            <option value="Curtido">Sim</option>
+                            <option value="Não Curtido">Não</option>
+                        </select>
                     </li>
 
                     <li>
