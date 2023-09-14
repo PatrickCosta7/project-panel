@@ -47,13 +47,11 @@ function BarraNav() {
                 </li>
                 <li>
                     <h5 className={styles.botao} onClick={abrirModal}>
-                        <Modal estaAberto={modalOn} closeModal={fecharModal}>
-                            Adicionar Filme
-                        </Modal>
+                        Adicionar Filme
                     </h5>
                 </li>
-                
             </ul>
+            <Modal modalOn={modalOn} fecharModal={fecharModal}/>    
         </header>
 
 
