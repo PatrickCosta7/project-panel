@@ -9,6 +9,10 @@
         color: $verde-escuro;
     }
 
+    @include sm {
+        font-size: 22px;
+    }
+
     @include md {
         font-size: 27px;
     }

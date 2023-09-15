@@ -26,7 +26,8 @@
     color: $verde-claro;
 
     &__cabecalho{
-        margin-bottom: 10px;
+        font-family: $fonte-titulo;
+        font-size: 27px;
     }
 
     &__corpo{
@@ -59,9 +60,11 @@
         }
 
         .selecao{
+            font-family: $fonte-titulo;
             color: $verde-muito-claro;
             cursor: pointer;
             &__D{
+                font-family: $fonte-titulo;
                 color: $destivado;
                 cursor: pointer;
             }
@@ -76,7 +79,8 @@
         }
 
         label{
-            font-size: 25px;
+            font-family: $fonte-titulo;
+            font-size: 23px;
             margin: 5px 10px;
         }
 

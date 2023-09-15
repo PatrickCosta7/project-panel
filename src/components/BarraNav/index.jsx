@@ -17,7 +17,7 @@ function BarraNav() {
 
     return (
 
-        <header className={styles.barra}>
+        <nav className={styles.barra}>
             <Logo />
             <ul className={styles.barra__lista}>
                 <li>
@@ -52,7 +52,7 @@ function BarraNav() {
                 </li>
             </ul>
             <Modal modalOn={modalOn} fecharModal={fecharModal}/>    
-        </header>
+        </nav>
 
 
     )

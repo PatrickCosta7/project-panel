@@ -30,7 +30,11 @@ $barra_height: 21vh;
                 &:hover {
                     color: $verde-claro;
                 }
-            
+                
+                @include sm {
+                    font-size: 22px;
+                }
+
                 @include md {
                     font-size: 27px;
                 }

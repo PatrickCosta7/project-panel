@@ -14,6 +14,7 @@ export default function Modal({ modalOn, fecharModal }) {
         if (opcaoSelecionada === '1') {
             setCurtido(true);
             selectCurtido.style.color = "#353535";
+            selectCurtido.selectedIndex ="0";
         } else {
             setCurtido(false);
             selectCurtido.style.color = "#FFF";
@@ -30,6 +31,10 @@ export default function Modal({ modalOn, fecharModal }) {
                 <ul className={styles.modal__corpo}>
                     <li className={styles.lista}>
                         <input type="text" placeholder="nome do filme" />
+                    </li>
+
+                    <li className={styles.lista}>
+                        <input type="text" placeholder="Link da imagem" />
                     </li>
 
                     <li className={styles.lista}>

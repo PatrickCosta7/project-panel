@@ -10,6 +10,14 @@
         color: $verde-claro;
         font-family: $fonte-logo;
 
+        @include xs {
+            font-size: 27px;
+        }
+
+        @include sm {
+            font-size: 30px;
+        }
+
         @include md {
             font-size: 40px;
         }
