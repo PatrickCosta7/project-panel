@@ -25,6 +25,7 @@ $barra_height: 21vh;
 
             .botao {
                 margin: 0;
+                cursor: pointer;
                 color: $verde-muito-claro;
             
                 &:hover {
@@ -36,16 +37,47 @@ $barra_height: 21vh;
                 }
 
                 @include md {
-                    font-size: 27px;
+                    font-size: 25px;
                 }
             
                 @include lg {
-                    font-size: 35px;
+                    font-size: 28px;
                 }   
             }
+        }   
+    }
+}
 
-        }
-        
+.hanMenu {
+    display: none;
+    position: absolute;
+    top: 0.75rem;
+    right: 0.5rem;
+    flex-direction: column;
+    justify-content: space-between;
+    width: 2.25rem;
+    height: 2rem;
+
+    span {
+        height: 0.4rem;
+        width: 100%;
+        background-color: #FFF;
+        border-radius: 0.2rem;
     }
 
+    @include xs {
+        display: flex;
+    }
+
+    @include sm {
+        display: none;
+    }
+
+    @include md {
+        display: none;
+    }
+
+    @include lg {
+        display: none;
+    }
 }

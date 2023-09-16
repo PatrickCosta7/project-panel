@@ -19,12 +19,12 @@ function BarraNav() {
 
         <nav className={styles.barra}>
             <Logo />
+            <div className={styles.hanMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div>
             <ul className={styles.barra__lista}>
-                <li>
-                    <BarraLink url="/">
-                        Todos
-                    </BarraLink>
-                </li>
                 <li>
                     <BarraLink url="">
                         Assistidos
