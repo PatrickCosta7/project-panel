@@ -2,3 +2,47 @@ https://colorhunt.co/palette/191a191e51284e9f3dd8e9a8
 https://codepen.io/mfsamuel/pen/YjXgMd
 
 https://moderncss.dev/custom-select-styles-with-pure-css/
+
+
+tentativa do hanburguer {
+
+            {/* <div className={styles.hanMenu}>
+                <span></span>
+                <span></span>
+                <span></span>
+            </div> */}
+
+// .hanMenu {
+//     display: none;
+//     position: absolute;
+//     top: 4.4rem;
+//     left: 0.5rem;
+//     flex-direction: column;
+//     justify-content: space-between;
+//     width: 2.25rem;
+//     height: 2rem;
+
+//     span {
+//         height: 0.4rem;
+//         width: 100%;
+//         background-color: #FFF;
+//         border-radius: 0.2rem;
+//     }
+
+//     @include xs {
+//         display: flex;
+//     }
+
+//     @include sm {
+//         display: none;
+//     }
+
+//     @include md {
+//         display: none;
+//     }
+
+//     @include lg {
+//         display: none;
+//     }
+// }
+}

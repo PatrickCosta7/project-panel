@@ -17,7 +17,7 @@ export default function Modal({ modalOn, fecharModal }) {
             selectCurtido.selectedIndex ="0";
         } else {
             setCurtido(false);
-            selectCurtido.style.color = "#FFF";
+            selectCurtido.style.color = "#4E9F3D";
         }
     }
 
