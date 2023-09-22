@@ -1,6 +1,9 @@
 import styles from "./Card.module.scss"
 
 export default function Card(props) {
+
+    // const movieId = props.id;
+
     return (
 
         <div className={`${styles.col_xs_6} ${styles.col_md_3} ${styles.col_lg_2}`}>
