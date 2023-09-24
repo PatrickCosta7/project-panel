@@ -1,8 +1,16 @@
 import styles from "./Card.module.scss"
+import { deleteMovie } from "services/movies";
+
 
 export default function Card(props) {
 
-    // const movieId = props.id;
+    async function deletarMovie(id){
+        await deleteMovie(id);
+        alert(`O Filme ${props.titulo} foi deletado com sucesso!`)
+        window.location.reload(true);
+    }
+
+    const movieId = props.id;
 
     return (
 
@@ -18,7 +26,7 @@ export default function Card(props) {
                     <li>{props.curtido}</li>
                     <li>
                         <button>Modificar</button>
-                        <button>Apagar</button>
+                        <button onClick={() => deletarMovie(movieId)}>Apagar</button>
                     </li>
                 </ul>
             </div>

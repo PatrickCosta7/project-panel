@@ -8,4 +8,8 @@ async function getMovies() {
     return response.data;
 }
 
-export { getMovies }
+async function deleteMovie(id) {
+    await moviesApi.delete(`/${id}`)
+}
+
+export { getMovies, deleteMovie }
