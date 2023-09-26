@@ -7,16 +7,16 @@ export default function Modal({ modalOn, fecharModal }) {
     const [opcaoSelecionada, setOpcaoSelecionada] = useState('');
     const [curtido, setCurtido] = useState(true);
     const [movies, setMovies] = useState([]);
-    
+
     useEffect(() => {
         fetchMovies()
     }, [])
-    
+
     async function fetchMovies() {
         const moviesJson = await getMovies()
         setMovies(moviesJson);
     }
-    
+
     //desabilitar o "Curtido?"
     const interagirComCurtido = (event) => {
         const selectCurtido = document.getElementById('curtido');
@@ -25,14 +25,14 @@ export default function Modal({ modalOn, fecharModal }) {
         if (opcaoSelecionada === 'Assistido') {
             setCurtido(true);
             selectCurtido.style.color = "#353535";
-            selectCurtido.selectedIndex ="0";
+            selectCurtido.selectedIndex = "0";
         } else {
             setCurtido(false);
             selectCurtido.style.color = "#4E9F3D";
         }
     }
 
-    function cadastrarMovie() {
+    async function cadastrarMovie() {
         const nome = document.getElementById('nomeFilme').value;
         const imagem = document.getElementById('linkImagem').value;
         const descricao = document.getElementById('descricao').value;
@@ -40,29 +40,21 @@ export default function Modal({ modalOn, fecharModal }) {
         const curtido = document.getElementById('curtido').value;
         const id = movies.length + 1;
         const objeto = {
-            id: [id],
-            nome: [nome],
-            imagem: [imagem],
-            descricao: [descricao],
-            visto: [visto],
-            curtido: [curtido]
+            id: id,
+            nome: nome,
+            imagem: imagem,
+            descricao: descricao,
+            visto: visto,
+            curtido: curtido
         }
 
-        const inserir = (() => {
-            postMovie(JSON.stringify(objeto))
-        })
-
-        if (inserir) {
-            alert("Filme cadastrado com sucesso")
-            window.location.reload(true);
-        } else {
-            alert("Filme não foi cadastrado")
-        }
-
+        await postMovie(JSON.stringify(objeto));
+        window.location.reload(true);
+        alert("Filme cadastrado com sucesso")
 
     }
 
-    return modalOn ? ( 
+    return modalOn ? (
         <div className={styles.overlay}>
             <div className={styles.modal}>
                 <header className={styles.modal__cabecalho}>
