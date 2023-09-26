@@ -1,17 +1,28 @@
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { getMovies, postMovie } from "services/movies"
 import styles from "./Modal.module.scss";
 
 export default function Modal({ modalOn, fecharModal }) {
 
     const [opcaoSelecionada, setOpcaoSelecionada] = useState('');
     const [curtido, setCurtido] = useState(true);
+    const [movies, setMovies] = useState([]);
+    
+    useEffect(() => {
+        fetchMovies()
+    }, [])
+    
+    async function fetchMovies() {
+        const moviesJson = await getMovies()
+        setMovies(moviesJson);
+    }
     
     //desabilitar o "Curtido?"
     const interagirComCurtido = (event) => {
         const selectCurtido = document.getElementById('curtido');
         const valorSelecionado = event.target.value;
         setOpcaoSelecionada(valorSelecionado);
-        if (opcaoSelecionada === '1') {
+        if (opcaoSelecionada === 'Assistido') {
             setCurtido(true);
             selectCurtido.style.color = "#353535";
             selectCurtido.selectedIndex ="0";
@@ -19,6 +30,36 @@ export default function Modal({ modalOn, fecharModal }) {
             setCurtido(false);
             selectCurtido.style.color = "#4E9F3D";
         }
+    }
+
+    function cadastrarMovie() {
+        const nome = document.getElementById('nomeFilme').value;
+        const imagem = document.getElementById('linkImagem').value;
+        const descricao = document.getElementById('descricao').value;
+        const visto = document.getElementById('visto').value;
+        const curtido = document.getElementById('curtido').value;
+        const id = movies.length + 1;
+        const objeto = {
+            id: [id],
+            nome: [nome],
+            imagem: [imagem],
+            descricao: [descricao],
+            visto: [visto],
+            curtido: [curtido]
+        }
+
+        const inserir = (() => {
+            postMovie(JSON.stringify(objeto))
+        })
+
+        if (inserir) {
+            alert("Filme cadastrado com sucesso")
+            window.location.reload(true);
+        } else {
+            alert("Filme não foi cadastrado")
+        }
+
+
     }
 
     return modalOn ? ( 
@@ -30,23 +71,23 @@ export default function Modal({ modalOn, fecharModal }) {
 
                 <ul className={styles.modal__corpo}>
                     <li className={styles.lista}>
-                        <input type="text" placeholder="nome do filme" />
+                        <input type="text" placeholder="nome do filme" id="nomeFilme" />
                     </li>
 
                     <li className={styles.lista}>
-                        <input type="text" placeholder="Link da imagem" />
+                        <input type="text" placeholder="Link da imagem" id="linkImagem" />
                     </li>
 
                     <li className={styles.lista}>
-                        <textarea className={styles.descricao} placeholder="descrição" />
+                        <textarea className={styles.descricao} placeholder="descrição" id="descricao" />
 
                     </li>
 
                     <li className={styles.lista}>
                         <label htmlFor="visto">Assistiu?</label>
                         <select value={opcaoSelecionada} onChange={interagirComCurtido} className={styles.selecao} name="visto" id="visto">
-                            <option value="0">Não</option>
-                            <option value="1">Sim</option>
+                            <option value="Nao assistido">Não</option>
+                            <option value="Assistido">Sim</option>
                         </select>
                     </li>
 
@@ -54,14 +95,14 @@ export default function Modal({ modalOn, fecharModal }) {
                         <label htmlFor="curtido">Curtido?</label>
                         <select className={styles.selecao__D} name="curtido" id="curtido" disabled={curtido}>
                             <option value="0">---</option>
-                            <option value="1">Sim</option>
-                            <option value="2">Não</option>
+                            <option value="Curtido">Sim</option>
+                            <option value="Nao curtido">Não</option>
                         </select>
                     </li>
 
                     <li className={styles.lista}>
                         <button onClick={fecharModal}>Fechar</button>
-                        <button>Cadastrar</button>
+                        <button onClick={cadastrarMovie}>Cadastrar</button>
                     </li>
                 </ul>
             </div>
