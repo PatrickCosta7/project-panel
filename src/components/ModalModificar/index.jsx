@@ -1,8 +1,8 @@
 import { useEffect, useState } from "react";
 import { getMovies, postMovie } from "services/movies"
-import styles from "./Modal.module.scss";
+import styles from "./ModalModificar.module.scss";
 
-export default function Modal({ modalOn, fecharModal }) {
+export default function ModalModificar({ modalOn, fecharModal }) {
 
     const [opcaoSelecionada, setOpcaoSelecionada] = useState('');
     const [curtido, setCurtido] = useState(true);
@@ -32,13 +32,13 @@ export default function Modal({ modalOn, fecharModal }) {
         }
     }
 
-    async function cadastrarMovie() {
+    async function ModificarMovie() {
         const nome = document.getElementById('nomeFilme').value;
         const imagem = document.getElementById('linkImagem').value;
         const descricao = document.getElementById('descricao').value;
         const visto = document.getElementById('visto').value;
         const curtido = document.getElementById('curtido').value;
-        const id = movies.length + 1;
+        // const id = props.id;
         const objeto = {
             id: id,
             nome: nome,
@@ -48,9 +48,9 @@ export default function Modal({ modalOn, fecharModal }) {
             curtido: curtido
         }
 
-        await postMovie(objeto);
+        await patchMovie(objeto);
         window.location.reload(true);
-        alert("Filme cadastrado com sucesso")
+        alert("Filme Modificado com sucesso")
 
     }
 
@@ -94,7 +94,7 @@ export default function Modal({ modalOn, fecharModal }) {
 
                     <li className={styles.lista}>
                         <button onClick={fecharModal}>Fechar</button>
-                        <button onClick={cadastrarMovie}>Cadastrar</button>
+                        <button onClick={ModificarMovie}>Cadastrar</button>
                     </li>
                 </ul>
             </div>

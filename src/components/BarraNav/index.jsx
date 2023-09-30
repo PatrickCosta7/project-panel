@@ -6,7 +6,7 @@ import styles from "./BarraNav.module.scss"
 
 function BarraNav() {
     const [modalOn, setModalOn] = useState(false);
-
+    
     const abrirModal = () => {
         setModalOn(true);
     }
@@ -46,7 +46,7 @@ function BarraNav() {
                     </h5>
                 </li>
             </ul>
-            <Modal modalOn={modalOn} fecharModal={fecharModal}/>    
+            <Modal modalOn={modalOn} fecharModal={fecharModal}/>
         </nav>
 
 

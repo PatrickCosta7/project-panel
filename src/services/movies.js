@@ -12,8 +12,8 @@ async function deleteMovie(id) {
     await moviesApi.delete(`/${id}`)
 }
 
-async function postMovie() {
-    await moviesApi.post('/')
+async function postMovie(objeto) {
+    await moviesApi.post('/', objeto)
 }
 
 export { getMovies, deleteMovie, postMovie }

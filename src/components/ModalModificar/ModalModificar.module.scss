@@ -1,0 +1,105 @@
+@import "../../styles/variaveis";
+@import "../../styles/breakpoints";
+
+.overlay{
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    top: 0;
+    left: 0;
+    background-color: rgba(0, 0, 0, 0.5);
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    z-index: 1000;
+}
+
+.modal{
+    width: 310px;
+    height: auto;
+    padding: 20px;
+    display: flex;
+    flex-flow: column;
+    background-color: $fundo-preto;
+    border-radius: 20px;
+    align-items: center;
+    color: $verde-claro;
+
+    &__cabecalho{
+        font-family: $fonte-titulo;
+        font-size: 27px;
+    }
+
+    &__corpo{
+        list-style: none;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        margin-right:30px ;
+
+        .lista{
+            margin-bottom: 10px;
+        }
+
+        .descricao{
+            width: 280px;
+            height: 300px;
+            margin: 5px 20px;
+            resize: vertical;
+            border-radius: 15px;
+        }
+
+        select{
+            background-color: transparent;
+            border: none;
+            font-family: inherit;
+            font-size: 20px;
+            cursor: inherit;
+            line-height: inherit;
+            z-index: 1;
+        }
+
+        .selecao{
+            font-family: $fonte-titulo;
+            color: $verde-claro;
+            cursor: pointer;
+            &__D{
+                font-family: $fonte-titulo;
+                color: $destivado;
+                cursor: pointer;
+            }
+        }
+
+        input{
+            border-radius: 25px;
+            border: 3px solid $verde-escuro;
+            margin: 5px 0px;
+            width: 280px;
+            height: 30px;
+        }
+
+        label{
+            font-family: $fonte-titulo;
+            font-size: 23px;
+            margin: 5px 10px;
+        }
+
+        button {
+            padding: 10px;
+            margin: 10px 5px 0px 5px;
+            background-color: $verde-escuro;
+            border: none;
+            border-radius: 5px;
+            font-family: $fonte-texto;
+            font-weight: 500;
+            color: $verde-muito-claro;
+            cursor: pointer;
+            
+            &:hover {
+                background-color: $verde-muito-claro;
+                color: $verde-escuro;
+            }
+
+        }
+    }
+}

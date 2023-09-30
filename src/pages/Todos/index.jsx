@@ -2,8 +2,19 @@ import Card from "components/Card"
 import styles from "./Todos.module.scss"
 import { getMovies } from "services/movies"
 import { useEffect, useState } from "react";
+import ModalModificar from "components/ModalModificar";
 
 export default function Todos() {
+
+    const [modalModificarOn, setModalModificarOn] = useState(false);
+
+    const abrirmodalModificar = () => {
+        setModalModificarOn(true);
+    }
+
+    const fecharmodalModificar = () => {
+        setModalModificarOn(false);
+    }
 
     useEffect(() => {
         fetchMovies()
@@ -30,6 +41,8 @@ export default function Todos() {
                     />
                 ))}
             </section>
+
+            <ModalModificar modalModificarOn={modalModificarOn} abrirModalModificar={abrirmodalModificar} fecharModalModificar={fecharmodalModificar}/>
         </>
     )
 }
