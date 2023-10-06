@@ -9,7 +9,7 @@ $barra_height_small: 15rem;
     top: 0;
     z-index: 1000;
     margin: 0;
-    padding: 0.1em;
+    padding: 0.1em 0;
 
     @include xs {
         height: $barra_height_small;

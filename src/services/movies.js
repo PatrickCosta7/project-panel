@@ -16,4 +16,8 @@ async function postMovie(objeto) {
     await moviesApi.post('/', objeto)
 }
 
-export { getMovies, deleteMovie, postMovie }
+async function patchMovie(id, objeto) {
+    await moviesApi.patch(`/${id}`, objeto)
+}
+
+export { getMovies, deleteMovie, postMovie, patchMovie }

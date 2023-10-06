@@ -25,7 +25,7 @@ export default function Modal({ modalOn, fecharModal }) {
         if (opcaoSelecionada === 'Assistido') {
             setCurtido(true);
             selectCurtido.style.color = "#353535";
-            selectCurtido.selectedIndex = "0";
+            selectCurtido.selectedIndex = "--";
         } else {
             setCurtido(false);
             selectCurtido.style.color = "#4E9F3D";
@@ -86,7 +86,7 @@ export default function Modal({ modalOn, fecharModal }) {
                     <li className={styles.lista}>
                         <label htmlFor="curtido">Curtido?</label>
                         <select className={styles.selecao__D} name="curtido" id="curtido" disabled={curtido}>
-                            <option value="0">---</option>
+                            <option value="--">---</option>
                             <option value="Curtido">Sim</option>
                             <option value="Nao curtido">Não</option>
                         </select>
