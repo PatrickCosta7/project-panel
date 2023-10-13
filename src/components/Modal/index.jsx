@@ -1,21 +1,13 @@
-import { useEffect, useState } from "react";
-import { getMovies, postMovie } from "services/movies"
+import { useContext, useState } from "react";
+import { postMovie } from "services/movies"
 import styles from "./Modal.module.scss";
+import { MoviesContext } from "context/movies";
 
 export default function Modal({ modalOn, fecharModal }) {
 
     const [opcaoSelecionada, setOpcaoSelecionada] = useState('');
     const [curtido, setCurtido] = useState(true);
-    const [movies, setMovies] = useState([]);
-
-    useEffect(() => {
-        fetchMovies()
-    }, [])
-
-    async function fetchMovies() {
-        const moviesJson = await getMovies()
-        setMovies(moviesJson);
-    }
+    const { movies } = useContext(MoviesContext)
 
     //desabilitar o "Curtido?"
     const interagirComCurtido = (event) => {
@@ -78,7 +70,7 @@ export default function Modal({ modalOn, fecharModal }) {
                     <li className={styles.lista}>
                         <label htmlFor="visto">Assistiu?</label>
                         <select value={opcaoSelecionada} onChange={interagirComCurtido} className={styles.selecao} name="visto" id="visto">
-                            <option value="Nao assistido">Não</option>
+                            <option value="Não assistido">Não</option>
                             <option value="Assistido">Sim</option>
                         </select>
                     </li>
@@ -88,7 +80,7 @@ export default function Modal({ modalOn, fecharModal }) {
                         <select className={styles.selecao__D} name="curtido" id="curtido" disabled={curtido}>
                             <option value="--">---</option>
                             <option value="Curtido">Sim</option>
-                            <option value="Nao curtido">Não</option>
+                            <option value="Não curtido">Não</option>
                         </select>
                     </li>
 

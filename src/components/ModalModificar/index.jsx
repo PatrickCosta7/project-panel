@@ -48,7 +48,7 @@ export default function ModalModificar(props) {
                         <li className={styles.lista}>
                             <label htmlFor="visto">Assistiu?</label>
                             <select defaultValue={props.visto} className={styles.selecao} name="visto" id="visto">
-                                <option value="Nao assistido">Não</option>
+                                <option value="Não assistido">Não</option>
                                 <option value="Assistido">Sim</option>
                             </select>
                         </li>
@@ -58,7 +58,7 @@ export default function ModalModificar(props) {
                             <select defaultValue={props.curtido} className={styles.selecao} name="curtido" id="curtido">
                                 <option value="--">---</option>
                                 <option value="Curtido">Sim</option>
-                                <option value="Nao curtido">Não</option>
+                                <option value="Não curtido">Não</option>
                             </select>
                         </li>
 

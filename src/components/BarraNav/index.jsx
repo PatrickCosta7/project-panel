@@ -21,22 +21,22 @@ function BarraNav() {
             <Logo />
             <ul className={styles.barra__lista}>
                 <li>
-                    <BarraLink url="">
+                    <BarraLink url="/assistidos">
                         Assistidos
                     </BarraLink>
                 </li>
                 <li>
-                    <BarraLink url="">
+                    <BarraLink url="/NaoVistos">
                         Não assistidos
                     </BarraLink>
                 </li>
                 <li>
-                    <BarraLink url="">
+                    <BarraLink url="/curtidos">
                         Gostei
                     </BarraLink>
                 </li>
                 <li>
-                    <BarraLink url="">
+                    <BarraLink url="/NaoCurtidos">
                         Não Gostei
                     </BarraLink>
                 </li>

@@ -1,24 +1,26 @@
 import Card from "components/Card"
-import styles from "./Todos.module.scss"
+import styles from "./Curtidos.module.scss"
 import { useContext } from "react"
 import { MoviesContext } from "context/movies"
 
-export default function Todos() {
+export default function Curtidos() {
 
     const { movies } = useContext(MoviesContext);
 
+    const filmesCurtidos = movies.filter(movie => movie.curtido === "Curtido");
+
     function verificacao() {
-        if (movies.length === 0) {
+        if (filmesCurtidos.length === 0) {
             return (
                 <div className={styles.box}>
                     <h1>
-                        Até agora você não tem nenhum filme em sua lista 
+                        Até agora nenhum filme foi curtido.
                     </h1>
                 </div>
             )
         } else {
             return (
-                movies.map(movie => (
+                filmesCurtidos.map(movie => (
                 <>
                     <Card
                         id={movie.id}
