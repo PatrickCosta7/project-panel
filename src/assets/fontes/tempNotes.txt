@@ -2,3 +2,5 @@
 - Verificar erro de Key
 - Tentar melhorar a performance 
 
+nodemon app.js
+npm start
