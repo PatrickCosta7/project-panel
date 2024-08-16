@@ -12,4 +12,5 @@ Front-end do painel feito para cadastrar filmes e séries, utilizando React.js e
     - Inicie a API
     - Usando o terminal, digite os comandos abaixo
     - `$ npm install` -> Instala todas as dependências do projeto
-    - `$ npm start` -> Inicia o projeto em `http://localhost:3000`
+    - `$ npm start` -> Inicia o projeto
+    - Acesse link `http://localhost:3000`.
