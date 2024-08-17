@@ -1,7 +1,7 @@
 FROM node:18-alpine
-WORKDIR /app
+COPY public/ /public
+COPY src/ /src
+COPY jsconfig.json .
 COPY package.json .
 RUN npm install
-COPY . .
-EXPOSE 3000
 CMD ["npm", "start"]
